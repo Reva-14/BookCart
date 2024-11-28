@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="js/Chart.min.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+<title>Cucumber Reports (no 2.0) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+                <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+                <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+    
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+              <th>Number</th>
+            <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>bookcart</td>
+              <td>2.0</td>
+            <td>28 Nov 2024, 16:19</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+      </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+          <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+      </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+                      <tr>
+              <td class="location">net.bookcart.stepDefinition.AddToCart.theQuantityOfTheBooksAreVerified()</td>
+              <td>1</td>
+              <td class="duration" data-value="157901400">0.157</td>
+              <td class="duration" data-value="157901400">0.157</td>
+              <td class="duration" data-value="157901400">0.157</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">net.bookcart.stepDefinition.AddToCart.the_cart_should_contain_both_the_books(java.lang.String,java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="5591548450">5.591</td>
+              <td class="duration" data-value="5591548450">10.240</td>
+              <td class="duration" data-value="11183096900">11.183</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">net.bookcart.stepDefinition.AddToCart.the_cart_should_contain_only_book(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="10096416500">10.096</td>
+              <td class="duration" data-value="10096416500">10.096</td>
+              <td class="duration" data-value="10096416500">10.096</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">net.bookcart.stepDefinition.AddToCart.the_cart_should_still_contain_the_book_in_the_cart(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="433932100">0.433</td>
+              <td class="duration" data-value="433932100">0.433</td>
+              <td class="duration" data-value="433932100">0.433</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">net.bookcart.stepDefinition.AddToCart.the_cart_should_update_to_show_quantity_of_the_book(java.lang.Integer)</td>
+              <td>1</td>
+              <td class="duration" data-value="290383100">0.290</td>
+              <td class="duration" data-value="290383100">0.290</td>
+              <td class="duration" data-value="290383100">0.290</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">net.bookcart.stepDefinition.AddToCart.the_product_should_be_added_to_the_cart_and_should_display_correct_product(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="755374800">0.755</td>
+              <td class="duration" data-value="755374800">0.755</td>
+              <td class="duration" data-value="755374800">0.755</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">net.bookcart.stepDefinition.AddToCart.the_total_price_should_be_the_sum_of_individual_prices_of_the_books()</td>
+              <td>1</td>
+              <td class="duration" data-value="206059800">0.206</td>
+              <td class="duration" data-value="206059800">0.206</td>
+              <td class="duration" data-value="206059800">0.206</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">net.bookcart.stepDefinition.AddToCart.the_total_price_should_reflect_the_updated_quantity()</td>
+              <td>1</td>
+              <td class="duration" data-value="48624600">0.048</td>
+              <td class="duration" data-value="48624600">0.048</td>
+              <td class="duration" data-value="48624600">0.048</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">net.bookcart.stepDefinition.AddToCart.user_adds_book_to_the_cart(java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="3914590380">3.914</td>
+              <td class="duration" data-value="3914590380">13.209</td>
+              <td class="duration" data-value="19572951900">19.572</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">net.bookcart.stepDefinition.AddToCart.user_adds_book_to_the_cart_with_quantity(java.lang.String,java.lang.Integer)</td>
+              <td>1</td>
+              <td class="duration" data-value="1585281400">1.585</td>
+              <td class="duration" data-value="1585281400">1.585</td>
+              <td class="duration" data-value="1585281400">1.585</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">net.bookcart.stepDefinition.AddToCart.user_changes_the_quantity_of_the_book_to_in_the_cart(java.lang.Integer)</td>
+              <td>1</td>
+              <td class="duration" data-value="1116096400">1.116</td>
+              <td class="duration" data-value="1116096400">1.116</td>
+              <td class="duration" data-value="1116096400">1.116</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">net.bookcart.stepDefinition.AddToCart.user_clicks_on_add_to_cart()</td>
+              <td>1</td>
+              <td class="duration" data-value="296897600">0.296</td>
+              <td class="duration" data-value="296897600">0.296</td>
+              <td class="duration" data-value="296897600">0.296</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">net.bookcart.stepDefinition.AddToCart.user_clicks_on_the_product_from_search_results()</td>
+              <td>1</td>
+              <td class="duration" data-value="331803900">0.331</td>
+              <td class="duration" data-value="331803900">0.331</td>
+              <td class="duration" data-value="331803900">0.331</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">net.bookcart.stepDefinition.AddToCart.user_launches_bookcart_application(java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="24479677000">24.479</td>
+              <td class="duration" data-value="24479677000">1:52.560</td>
+              <td class="duration" data-value="122398385000">2:2.398</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">net.bookcart.stepDefinition.AddToCart.user_refreshes_the_application()</td>
+              <td>3</td>
+              <td class="duration" data-value="845060666">0.845</td>
+              <td class="duration" data-value="845060666">1.810</td>
+              <td class="duration" data-value="2535182000">2.535</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">net.bookcart.stepDefinition.AddToCart.user_removes_book_from_the_cart(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="10098646800">10.098</td>
+              <td class="duration" data-value="10098646800">10.098</td>
+              <td class="duration" data-value="10098646800">10.098</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">net.bookcart.stepDefinition.AddToCart.user_searches_book_in_the_search_bar(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="2228292300">2.228</td>
+              <td class="duration" data-value="2228292300">2.228</td>
+              <td class="duration" data-value="2228292300">2.228</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">net.bookcart.stepDefinition.AddToCart.user_views_the_cart()</td>
+              <td>4</td>
+              <td class="duration" data-value="3686185250">3.686</td>
+              <td class="duration" data-value="3686185250">4.796</td>
+              <td class="duration" data-value="14744741000">14.744</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">net.bookcart.stepDefinition.Hooks.closeBrowser()</td>
+              <td>5</td>
+              <td class="duration" data-value="730644880">0.730</td>
+              <td class="duration" data-value="730644880">1.346</td>
+              <td class="duration" data-value="3653224400">3.653</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">net.bookcart.stepDefinition.Hooks.launchBrowser()</td>
+              <td>5</td>
+              <td class="duration" data-value="3190669180">3.190</td>
+              <td class="duration" data-value="3190669180">4.318</td>
+              <td class="duration" data-value="15953345900">15.953</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                  </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>20</td>
+            <td>42</td>
+            <td class="duration">5.183</td>
+            <td class="duration">2:2.398</td>
+            <td class="duration">3:37.686</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
