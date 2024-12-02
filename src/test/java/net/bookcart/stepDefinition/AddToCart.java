@@ -109,7 +109,10 @@ public class AddToCart {
 			String productInCart2 = base.getText(locator.getSecondProductNameInCart());
 //			assert productInCart1.contains(book1) : "First product not found in cart!";
 //			assert productInCart2.contains(book2) : "Second product not found in cart!";
-			
+			System.out.println(book1);
+			System.out.println(productInCart1);
+			System.out.println(book2);
+			System.out.println(productInCart2);
 			Assert.assertEquals(book1, productInCart1);
 			Assert.assertEquals(book2, productInCart2);
 			
