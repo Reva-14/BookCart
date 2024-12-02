@@ -13,7 +13,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 						 dryRun = !true,
 		                 monochrome = true,
 		                 snippets = SnippetType.CAMELCASE,
-		                 plugin = {"pretty","html:target/html", "json:target/Reports.json"}
+		                 plugin = {"pretty","html:target/html", "json:target/reports.json"}
 		                 )
 	public class TestRunner {	
 		

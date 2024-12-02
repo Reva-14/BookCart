@@ -34,13 +34,8 @@
     <artifactId>junit</artifactId>
     <version>4.13.2</version>
 </dependency>
-<dependency>
-        <groupId>com.aventstack</groupId>
-        <artifactId>extentreports</artifactId>
-        <version>5.0.9</version>
-    </dependency>
  </dependencies>
- <properties>
+<properties>
 <maven.compiler.source>1.8</maven.compiler.source>
 <maven.compiler.target>1.8</maven.compiler.target>
 </properties>
@@ -88,7 +83,7 @@
 <projectName>bookcart</projectName>
 <outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
 <jsonFiles>
-<param>${project.build.directory}/Reports.json</param>
+<param>${project.build.directory}/reports.json</param>
 </jsonFiles>
 <enableFlashCharts>true</enableFlashCharts>
 <buildNumber>2.0</buildNumber>
