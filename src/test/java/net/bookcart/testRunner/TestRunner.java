@@ -14,6 +14,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 		                 monochrome = true,
 		                 snippets = SnippetType.CAMELCASE,
 		                 plugin = {"pretty","html:target/html", "json:target/reports.json"}
+//	,tags = "@tag"
 		                 )
 	public class TestRunner {	
 		

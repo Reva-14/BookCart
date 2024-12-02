@@ -17,7 +17,6 @@ Given User Launches Bookcart Application "https://bookcart.azurewebsites.net/"
     And The Quantity Of The Books are Verified
     And The Total Price Should Be The Sum Of Individual Prices Of The Books
     
-    @tag
   Scenario: Verify Cart Persistance After Page Refresh
     When User Adds "Slayer" Book To The Cart
     And User Refreshes The Application
@@ -33,6 +32,7 @@ Given User Launches Bookcart Application "https://bookcart.azurewebsites.net/"
     And User Refreshes The Application
    Then The Cart Should Contain Only "Slayer" Book
    
+   @tag
   Scenario: Update Quantity Of A Book In The Cart
    When User Adds "Slayer" Book To The Cart With Quantity 1
     And User Views The Cart

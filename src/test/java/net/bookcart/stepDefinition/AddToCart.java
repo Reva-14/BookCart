@@ -1,9 +1,15 @@
 package net.bookcart.stepDefinition;
 
+
+
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.testng.asserts.SoftAssert;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
 import net.bookcart.objectRepository.ObjectRepository;
 
 public class AddToCart {
@@ -64,7 +70,8 @@ public class AddToCart {
 		try {
 			base.button(locator.getCartIcon());
 			String productInCart1 = base.getText(locator.getFirstProductNameInCart());
-			assert productInCart1.contains(bookName) : "Product not found in cart!";
+//			assert productInCart1.contains(bookName) : "Product not found in cart!";
+			Assert.assertEquals(bookName, productInCart1);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -100,8 +107,12 @@ public class AddToCart {
 		try {
 			String productInCart1 = base.getText(locator.getFirstProductNameInCart());
 			String productInCart2 = base.getText(locator.getSecondProductNameInCart());
-			assert productInCart1.contains(book1) : "First product not found in cart!";
-			assert productInCart2.contains(book2) : "Second product not found in cart!";
+//			assert productInCart1.contains(book1) : "First product not found in cart!";
+//			assert productInCart2.contains(book2) : "Second product not found in cart!";
+			
+			Assert.assertEquals(book1, productInCart1);
+			Assert.assertEquals(book2, productInCart2);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -113,8 +124,12 @@ public class AddToCart {
 		try {
 			String productInCart1 = base.getText(locator.getFirstProductQuantityInCart());
 			String productInCart2 = base.getText(locator.getSecondProductQuantityInCart());
-			assert productInCart1.contains("1") : "First Product not found in cart!";
-			assert productInCart2.contains("1") : "Second Product not found in cart!";
+//			assert productInCart1.contains("1") : "First Product not found in cart!";
+//			assert productInCart2.contains("1") : "Second Product not found in cart!";
+			
+			Assert.assertEquals("1", productInCart1);
+			Assert.assertEquals("1", productInCart2);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -129,15 +144,22 @@ public class AddToCart {
 
 			productInCart1 = productInCart1.replace("₹", "").replace(",", "");
 			productInCart2 = productInCart2.replace("₹", "").replace(",", "");
-			double price1 = Double.parseDouble(productInCart1);
-			double price2 = Double.parseDouble(productInCart2);
-			double sum = price1+price2;
+//			double price1 = Double.parseDouble(productInCart1);
+//			double price2 = Double.parseDouble(productInCart2);
+			
+			int price1 = (int)Double.parseDouble(productInCart1);
+			int price2 = (int)Double.parseDouble(productInCart2);
+			
+			int sum = price1+price2;
 
 			String totalPrice = base.getText(locator.getTotalPrice());
 			totalPrice = totalPrice.replace("₹", "").replace(",", "");
-			double total = Double.parseDouble(totalPrice);
+//			double total = Double.parseDouble(totalPrice);
 
-			assert sum == total : "The Sum of Individual Prices of the books doesn't equals Total Amount";
+			int total = (int)Double.parseDouble(totalPrice);
+			
+//			assert sum == total : "The Sum of Individual Prices of the books doesn't equals Total Amount";
+			Assert.assertEquals(sum, total);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -158,7 +180,9 @@ public class AddToCart {
 
 		try {
 			String productInCart1 = base.getText(locator.getFirstProductNameInCart());
-			assert productInCart1.contains(bookName) : "Product not found in cart!";
+//			assert productInCart1.contains(bookName) : "Product not found in cart!";
+			
+			Assert.assertEquals(bookName, productInCart1);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -179,7 +203,9 @@ public class AddToCart {
 
 		try {
 			String productInCart1 = base.getText(locator.getFirstProductNameInCart());
-			assert productInCart1.contains(bookName) : "Product not found in cart!";
+//			assert productInCart1.contains(bookName) : "Product not found in cart!";
+			
+			Assert.assertEquals(bookName, productInCart1);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -213,7 +239,9 @@ public class AddToCart {
 
 		try {
 			String productInCart1 = base.getText(locator.getFirstProductQuantityInCart());
-			assert productInCart1.contains("2") : "Quantity of the book is not Updated";
+//			assert productInCart1.contains("2") : "Quantity of the book is not Updated";
+			
+			Assert.assertEquals("2", productInCart1);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -224,14 +252,27 @@ public class AddToCart {
 
 		try {
 			String productInCart1 = base.getText(locator.getFirstProductPriceInCart());
+			System.out.println(productInCart1);
 			productInCart1 = productInCart1.replace("₹", "").replace(",", "");
-			double price = Double.parseDouble(productInCart1);
+			System.out.println(productInCart1);
+//			double price = Double.parseDouble(productInCart1);
+			int price = (int)Double.parseDouble(productInCart1);
+			
+//			Integer price = Integer.parseInt(productInCart1);
+			System.out.println(price);
 
 			String totalPrice = base.getText(locator.getTotalPrice());
 			totalPrice = totalPrice.replace("₹", "").replace(",", "");
-			double total = Double.parseDouble(totalPrice);
+//			double total = Double.parseDouble(totalPrice);
+//			int total = Integer.parseInt(totalPrice);
+			int total = (int)Double.parseDouble(totalPrice);
+			
+//			Integer total = Integer.parseInt(totalPrice);
+			System.out.println(total);
 
-			assert price == total : "Total Price doesn't Reflect The Updated Quantity";
+//			assert price == total : "Total Price doesn't Reflect The Updated Quantity";
+			Assert.assertEquals(price, total);
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
