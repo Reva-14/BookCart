@@ -9,6 +9,7 @@ Given User Launches Bookcart Application "https://bookcart.azurewebsites.net/"
     And User Clicks On Add To Cart 
     Then The Product Should Be Added To The Cart and Should Display Correct Product "The Chosen"
 
+@tag
   Scenario: Verify Cart After Adding Multiple Books
     When User Adds "The Chosen" Book To The Cart
     And User Adds "Slayer" Book To The Cart
