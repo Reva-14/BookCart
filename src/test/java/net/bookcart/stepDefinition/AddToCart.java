@@ -259,21 +259,21 @@ public class AddToCart {
 			String productInCart1 = base.getText(locator.getFirstProductPriceInCart());
 			System.out.println(productInCart1);
 			
-			productInCart1 = productInCart1.replace("₹", "").replace(",", "");
-			System.out.println(productInCart1);
+			String newProd = productInCart1.replace("₹", "").replace(",", "");
+			System.out.println(newProd);
 //			double price = Double.parseDouble(productInCart1);
 			Thread.sleep(3000);
-			int price = (int)Double.parseDouble(productInCart1);
+			int price = (int)Double.parseDouble(newProd);
 			
 //			Integer price = Integer.parseInt(productInCart1);
 			System.out.println(price);
 
 			String totalPrice = base.getText(locator.getTotalPrice());
-			totalPrice = totalPrice.replace("₹", "").replace(",", "");
+			String newTotal = totalPrice.replace("₹", "").replace(",", "");
 			Thread.sleep(3000);
 //			double total = Double.parseDouble(totalPrice);
 //			int total = Integer.parseInt(totalPrice);
-			int total = (int)Double.parseDouble(totalPrice);
+			int total = (int)Double.parseDouble(newTotal);
 			
 //			Integer total = Integer.parseInt(totalPrice);
 			System.out.println(total);
