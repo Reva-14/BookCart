@@ -144,8 +144,10 @@ public class AddToCart {
 		try {
 			String productInCart1 = base.getText(locator.getFirstProductPriceInCart());
 			String productInCart2 = base.getText(locator.getSecondProductPriceInCart());
-
+			
+			Thread.sleep(2000);
 			productInCart1 = productInCart1.replace("₹", "").replace(",", "");
+			Thread.sleep(2000);
 			productInCart2 = productInCart2.replace("₹", "").replace(",", "");
 //			double price1 = Double.parseDouble(productInCart1);
 //			double price2 = Double.parseDouble(productInCart2);
