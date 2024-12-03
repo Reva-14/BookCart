@@ -105,6 +105,7 @@ public class AddToCart {
 	public void the_cart_should_contain_both_the_books(String book1, String book2) {
 
 		try {
+			Thread.sleep(3000);
 			String productInCart1 = base.getText(locator.getFirstProductNameInCart());
 			String productInCart2 = base.getText(locator.getSecondProductNameInCart());
 //			assert productInCart1.contains(book1) : "First product not found in cart!";
@@ -166,7 +167,12 @@ public class AddToCart {
 			int sum = price1+price2;
 
 			String totalPrice = base.getText(locator.getTotalPrice());
-			totalPrice = totalPrice.replace("₹", "").replace(",", "");
+			
+			String total1 = "";
+			for(int i=1; i<totalPrice.length(); i++) {
+				total1 = total1 + totalPrice.charAt(i); 
+			}
+			totalPrice = total1.replace(",", "");
 //			double total = Double.parseDouble(totalPrice);
 
 			int total = (int)Double.parseDouble(totalPrice);
