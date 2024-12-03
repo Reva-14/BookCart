@@ -145,10 +145,18 @@ public class AddToCart {
 			String productInCart1 = base.getText(locator.getFirstProductPriceInCart());
 			String productInCart2 = base.getText(locator.getSecondProductPriceInCart());
 			
-			Thread.sleep(5000);
-			productInCart1 = productInCart1.replace("₹", "").replace(",", "");
-			Thread.sleep(5000);
-			productInCart2 = productInCart2.replace("₹", "").replace(",", "");
+			String newProd = "";
+			for(int i=1; i<productInCart1.length(); i++) {
+				newProd = newProd + productInCart1.charAt(i); 
+			}
+			productInCart1 = newProd.replace(",", "");
+			
+			String newProd1 = "";
+			for(int i=1; i<productInCart2.length(); i++) {
+				newProd1 = newProd1 + productInCart2.charAt(i); 
+			}
+			productInCart1 = newProd.replace(",", "");
+			productInCart2 = newProd1.replace(",", "");
 //			double price1 = Double.parseDouble(productInCart1);
 //			double price2 = Double.parseDouble(productInCart2);
 			
